@@ -1,0 +1,628 @@
+@prefix : <http://www.semanticweb.org/moc13mx/ontologies/2021/4/usgo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP> .
+
+<http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#invokes
+:invokes rdf:type owl:ObjectProperty ;
+         rdfs:domain :Agent ;
+         rdfs:range :G_Mechanic ;
+         rdfs:comment "Agents invokes mechanics"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Abstract
+:Abstract rdf:type owl:Class ;
+          rdfs:subClassOf :Object .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Activation
+:Activation rdf:type owl:Class ;
+            rdfs:subClassOf :G_Mechanic .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#AffectiveState
+:AffectiveState rdf:type owl:Class ;
+                rdfs:subClassOf :L_State .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Agent
+:Agent rdf:type owl:Class ;
+       rdfs:subClassOf :G_Entity .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Algorithm
+:Algorithm rdf:type owl:Class ;
+           rdfs:subClassOf :ProceduralKnowledge .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#AnalysingState
+:AnalysingState rdf:type owl:Class ;
+                rdfs:subClassOf :CognitiveState .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#ApplicationObjective
+:ApplicationObjective rdf:type owl:Class ;
+                      rdfs:subClassOf :L_Objective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#ApplicationState
+:ApplicationState rdf:type owl:Class ;
+                  rdfs:subClassOf :CognitiveState .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Apply
+:Apply rdf:type owl:Class ;
+       rdfs:subClassOf :ApplicationObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#ArticulationState
+:ArticulationState rdf:type owl:Class ;
+                   rdfs:subClassOf :PsychomotorState .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Artificial
+:Artificial rdf:type owl:Class ;
+            rdfs:subClassOf :Object .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Build
+:Build rdf:type owl:Class ;
+       rdfs:subClassOf :ApplicationObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Categorization
+:Categorization rdf:type owl:Class ;
+                owl:equivalentClass :Classification ;
+                rdfs:subClassOf :ConceptualKnowledge .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#ChangeOfPossession
+:ChangeOfPossession rdf:type owl:Class ;
+                    rdfs:subClassOf :G_Mechanic .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#ChnageOfElement
+:ChnageOfElement rdf:type owl:Class ;
+                 rdfs:subClassOf :G_Mechanic .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Choose
+:Choose rdf:type owl:Class ;
+        rdfs:subClassOf :ApplicationObjective ,
+                        :ProximateGoal ,
+                        :RememberingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Choosing
+:Choosing rdf:type owl:Class ;
+          rdfs:subClassOf :G_Mechanic .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Classification
+:Classification rdf:type owl:Class ;
+                rdfs:subClassOf :ConceptualKnowledge ;
+                rdfs:comment "Species of animals, different kinds of arguments, geological eras"@en .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Classify
+:Classify rdf:type owl:Class ;
+          rdfs:subClassOf :UnderstandingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#CognitiveState
+:CognitiveState rdf:type owl:Class ;
+                rdfs:subClassOf :L_State .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Compare
+:Compare rdf:type owl:Class ;
+         rdfs:subClassOf :UnderstandingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#ConceptualKnowledge
+:ConceptualKnowledge rdf:type owl:Class ;
+                     rdfs:subClassOf :L_Object ;
+                     rdfs:comment "The relationships among pieces of a larger structure that make them function together"@en .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Configure
+:Configure rdf:type owl:Class ;
+           rdfs:subClassOf :ProximateGoal .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Construct
+:Construct rdf:type owl:Class ;
+           rdfs:subClassOf :ApplicationObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Contrast
+:Contrast rdf:type owl:Class ;
+          rdfs:subClassOf :UnderstandingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Create
+:Create rdf:type owl:Class ;
+        rdfs:subClassOf :ProximateGoal .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#CreatingState
+:CreatingState rdf:type owl:Class ;
+               rdfs:subClassOf :CognitiveState .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Creation
+:Creation rdf:type owl:Class ;
+          rdfs:subClassOf :G_Mechanic .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Define
+:Define rdf:type owl:Class ;
+        rdfs:subClassOf :RememberingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Demonstrate
+:Demonstrate rdf:type owl:Class ;
+             rdfs:subClassOf :UnderstandingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Develop
+:Develop rdf:type owl:Class ;
+         rdfs:subClassOf :ApplicationObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Diagnostic
+:Diagnostic rdf:type owl:Class ;
+            rdfs:subClassOf :L_Assessment .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#EvaluatingState
+:EvaluatingState rdf:type owl:Class ;
+                 rdfs:subClassOf :CognitiveState .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Experiment_with
+:Experiment_with rdf:type owl:Class ;
+                 rdfs:subClassOf :ApplicationObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Explain
+:Explain rdf:type owl:Class ;
+         rdfs:subClassOf :UnderstandingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Extend
+:Extend rdf:type owl:Class ;
+        rdfs:subClassOf :UnderstandingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#FactualKnowledge
+:FactualKnowledge rdf:type owl:Class ;
+                  rdfs:subClassOf :L_Object .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Find
+:Find rdf:type owl:Class ;
+      rdfs:subClassOf :ProximateGoal ,
+                      :RememberingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Formative
+:Formative rdf:type owl:Class ;
+           rdfs:subClassOf :L_Assessment .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#G_Element
+:G_Element rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#G_Entity
+:G_Entity rdf:type owl:Class ;
+          rdfs:subClassOf :G_Element .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#G_Evaluation
+:G_Evaluation rdf:type owl:Class ;
+              rdfs:subClassOf :G_Element .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#G_Goal
+:G_Goal rdf:type owl:Class ;
+        rdfs:subClassOf :G_Element .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#G_Mechanic
+:G_Mechanic rdf:type owl:Class ;
+            rdfs:subClassOf :G_Element ;
+            rdfs:comment """Sicart's definition of game mechanics:
+
+Methods(actions) invoked by agents, designed for interaction with the game state.""" .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#G_Player
+:G_Player rdf:type owl:Class ;
+          rdfs:subClassOf :G_Element .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#G_State
+:G_State rdf:type owl:Class ;
+         rdfs:subClassOf :G_Element .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Generalization
+:Generalization rdf:type owl:Class ;
+                rdfs:subClassOf :ConceptualKnowledge .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Identify
+:Identify rdf:type owl:Class ;
+          rdfs:subClassOf :ApplicationObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Illustrate
+:Illustrate rdf:type owl:Class ;
+            rdfs:subClassOf :UnderstandingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#ImitationState
+:ImitationState rdf:type owl:Class ;
+                rdfs:subClassOf :PsychomotorState .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Infer
+:Infer rdf:type owl:Class ;
+       rdfs:subClassOf :UnderstandingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#InternalizingState
+:InternalizingState rdf:type owl:Class ;
+                    rdfs:subClassOf :AffectiveState .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Interpret
+:Interpret rdf:type owl:Class ;
+           rdfs:subClassOf :UnderstandingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Interview
+:Interview rdf:type owl:Class ;
+           rdfs:subClassOf :ApplicationObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#L_Action
+:L_Action rdf:type owl:Class ;
+          rdfs:subClassOf :L_Element .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#L_Assessment
+:L_Assessment rdf:type owl:Class ;
+              rdfs:subClassOf :L_Element .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#L_Element
+:L_Element rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#L_Learner
+:L_Learner rdf:type owl:Class ;
+           rdfs:subClassOf :L_Element .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#L_Object
+:L_Object rdf:type owl:Class ;
+          rdfs:subClassOf :L_Element .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#L_Objective
+:L_Objective rdf:type owl:Class ;
+             rdfs:subClassOf :L_Element .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#L_State
+:L_State rdf:type owl:Class ;
+         rdfs:subClassOf :L_Element .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Label
+:Label rdf:type owl:Class ;
+       rdfs:subClassOf :RememberingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#List
+:List rdf:type owl:Class ;
+      rdfs:subClassOf :RememberingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Make_use_of
+:Make_use_of rdf:type owl:Class ;
+             rdfs:subClassOf :ApplicationObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#ManipulationState
+:ManipulationState rdf:type owl:Class ;
+                   rdfs:subClassOf :PsychomotorState .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Match
+:Match rdf:type owl:Class ;
+       owl:equivalentClass :Synchronize ;
+       rdfs:subClassOf :RememberingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#MetacognitiveKnowledge
+:MetacognitiveKnowledge rdf:type owl:Class ;
+                        rdfs:subClassOf :L_Object .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Method
+:Method rdf:type owl:Class ;
+        rdfs:subClassOf :ProceduralKnowledge .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Model
+:Model rdf:type owl:Class ;
+       rdfs:subClassOf :ApplicationObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Name
+:Name rdf:type owl:Class ;
+      rdfs:subClassOf :RememberingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Natural
+:Natural rdf:type owl:Class ;
+         rdfs:subClassOf :Object .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#NaturalizationState
+:NaturalizationState rdf:type owl:Class ;
+                     rdfs:subClassOf :PsychomotorState .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Navigation
+:Navigation rdf:type owl:Class ;
+            rdfs:subClassOf :G_Mechanic .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Non-Operator
+:Non-Operator rdf:type owl:Class ;
+              rdfs:subClassOf :Agent .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Object
+:Object rdf:type owl:Class ;
+        rdfs:subClassOf :G_Entity .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Obtain
+:Obtain rdf:type owl:Class ;
+        rdfs:subClassOf :ProximateGoal .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Omit
+:Omit rdf:type owl:Class ;
+      rdfs:subClassOf :RememberingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Operator
+:Operator rdf:type owl:Class ;
+          rdfs:subClassOf :Agent .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Optimize
+:Optimize rdf:type owl:Class ;
+          rdfs:subClassOf :ProximateGoal .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Organize
+:Organize rdf:type owl:Class ;
+          rdfs:subClassOf :ApplicationObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#OrganizingState
+:OrganizingState rdf:type owl:Class ;
+                 rdfs:subClassOf :AffectiveState .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Outline
+:Outline rdf:type owl:Class ;
+         rdfs:subClassOf :UnderstandingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Overall
+:Overall rdf:type owl:Class ;
+         rdfs:subClassOf :L_Assessment .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Plan
+:Plan rdf:type owl:Class ;
+      rdfs:subClassOf :ApplicationObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#PrecisionState
+:PrecisionState rdf:type owl:Class ;
+                rdfs:subClassOf :PsychomotorState .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Principle
+:Principle rdf:type owl:Class ;
+           rdfs:subClassOf :ConceptualKnowledge .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#ProceduralKnowledge
+:ProceduralKnowledge rdf:type owl:Class ;
+                     rdfs:subClassOf :L_Object .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#ProximateGoal
+:ProximateGoal rdf:type owl:Class ;
+               rdfs:subClassOf :G_Goal .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#PsychomotorState
+:PsychomotorState rdf:type owl:Class ;
+                  rdfs:subClassOf :L_State .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Reach
+:Reach rdf:type owl:Class ;
+       rdfs:subClassOf :ProximateGoal .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Recall
+:Recall rdf:type owl:Class ;
+        rdfs:subClassOf :RememberingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#ReceivingState
+:ReceivingState rdf:type owl:Class ;
+                rdfs:subClassOf :AffectiveState .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Relate
+:Relate rdf:type owl:Class ;
+        rdfs:subClassOf :RememberingObjective ,
+                        :UnderstandingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#RememberingObjective
+:RememberingObjective rdf:type owl:Class ;
+                      rdfs:subClassOf :L_Objective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#RememberingState
+:RememberingState rdf:type owl:Class ;
+                  rdfs:subClassOf :CognitiveState .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Removal
+:Removal rdf:type owl:Class ;
+         rdfs:subClassOf :G_Mechanic .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Remove
+:Remove rdf:type owl:Class ;
+        rdfs:subClassOf :ProximateGoal .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Rephrase
+:Rephrase rdf:type owl:Class ;
+          rdfs:subClassOf :UnderstandingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#RespondingState
+:RespondingState rdf:type owl:Class ;
+                 rdfs:subClassOf :AffectiveState .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Select
+:Select rdf:type owl:Class ;
+        rdfs:subClassOf :ApplicationObjective ,
+                        :RememberingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Self-Knowledge
+:Self-Knowledge rdf:type owl:Class ;
+                rdfs:subClassOf :MetacognitiveKnowledge .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Show
+:Show rdf:type owl:Class ;
+      rdfs:subClassOf :RememberingObjective ,
+                      :UnderstandingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Solve
+:Solve rdf:type owl:Class ;
+       rdfs:subClassOf :ApplicationObjective ,
+                       :ProximateGoal .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Spell
+:Spell rdf:type owl:Class ;
+       rdfs:subClassOf :RememberingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Strategy
+:Strategy rdf:type owl:Class ;
+          rdfs:subClassOf :MetacognitiveKnowledge .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Structure
+:Structure rdf:type owl:Class ;
+           rdfs:subClassOf :ConceptualKnowledge .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Summarize
+:Summarize rdf:type owl:Class ;
+           rdfs:subClassOf :UnderstandingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Summative
+:Summative rdf:type owl:Class ;
+           rdfs:subClassOf :L_Assessment .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Synchronize
+:Synchronize rdf:type owl:Class ;
+             rdfs:subClassOf :ProximateGoal .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Technique
+:Technique rdf:type owl:Class ;
+           rdfs:subClassOf :ProceduralKnowledge .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Tell
+:Tell rdf:type owl:Class ;
+      rdfs:subClassOf :RememberingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Terminology
+:Terminology rdf:type owl:Class ;
+             rdfs:subClassOf :FactualKnowledge .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Theory
+:Theory rdf:type owl:Class ;
+        rdfs:subClassOf :ConceptualKnowledge .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Translate
+:Translate rdf:type owl:Class ;
+           rdfs:subClassOf :UnderstandingObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#UnderstandingObjective
+:UnderstandingObjective rdf:type owl:Class ;
+                        rdfs:subClassOf :L_Objective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#UndestandingState
+:UndestandingState rdf:type owl:Class ;
+                   rdfs:subClassOf :CognitiveState .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#Utilize
+:Utilize rdf:type owl:Class ;
+         rdfs:subClassOf :ApplicationObjective .
+
+
+###  http://www.semanticweb.org/moc13mx/ontologies/2021/4/LE_GE_MAP#ValuingState
+:ValuingState rdf:type owl:Class ;
+              rdfs:subClassOf :AffectiveState .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
